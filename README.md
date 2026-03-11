@@ -1,27 +1,29 @@
-# 📸 Gallery Project
+# 📸 Photo Gallery Project
 
-A modern animated gallery built using **React**, **Tailwind CSS**, and **GSAP**.
-This project displays images in a clean grid layout with smooth animations and responsive design.
+A modern, interactive photo gallery built using **React**, **Tailwind CSS**, and **GSAP**. This project fetches images from **Picsum API** and displays them in a responsive, animated layout with pagination and lazy loading.
+
+## Overview
+
+This gallery project allows users to browse random high-quality images from the Picsum API. Each image maintains its original aspect ratio, displays the author's name, and includes hover animation effects. Pagination allows navigating through multiple pages of images seamlessly.
+
+## Tech Stack
+
+- **React** – Component-based UI  
+- **Tailwind CSS** – Utility-first styling for responsive layouts  
+- **GSAP** – Smooth hover and scroll animations  
+- **Picsum API** – Source of random images  
+
+## Features
+
+- Responsive photo gallery layout  
+- Hover effects on images (scale animation)  
+- Maintains original image aspect ratio (no distortion)  
+- Pagination with "Next" and "Prev" buttons  
+- Lazy loading images for faster performance  
+- Clicking an image opens it in a new tab  
 
 ---
 
-## 🚀 Tech Stack
-
-* **React** – For building the UI components
-* **Tailwind CSS** – For fast and responsive styling
-* **GSAP** – For smooth and powerful animations
-
----
-
-## ✨ Features
-
-* Responsive image gallery layout
-* Smooth animations using GSAP
-* Clean and modern UI design
-* Fast performance with React components
-* Mobile friendly design
-
----
 
 ## 📂 Project Setup
 
@@ -56,19 +58,20 @@ npm run dev
 ```
 src
  ┣ components
- ┣ assets
- ┣ App.jsx
- ┗ main.jsx
+ ┃ ┗ Card.jsx       # Reusable Card component
+ ┣ App.jsx          # Main gallery component
+ ┗ main.jsx         # React entry point
 ```
 
 ---
 
 ## 🧠 What I Learned
 
-* Creating reusable components in React
-* Styling quickly using Tailwind CSS
-* Adding animations with GSAP
-* Structuring a React project
+* Fetching and handling API data in React
+* Passing props to reusable components
+* Implementing pagination with useState and useEffect
+* Preserving image aspect ratio using Tailwind
+* Adding smooth hover animations using GSAP
 
 ---
 
@@ -76,7 +79,7 @@ src
 
 **Sahariar Ahmed Fahim**
 Computer Science & Engineering Student
-Passionate about Web Development and Problem Solving.
+Passionate about Web Development and Problem Solving
 
 ---
 
