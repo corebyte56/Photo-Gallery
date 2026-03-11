@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const card = (props) => {
-  const {elem} = props;
+const Card = ({ elem }) => {
   return (
     <div>
-      <a key={elem.id} href={elem.url} target="_blank" rel="noopener noreferrer">
-        <div className='overflow-hidden rounded-xl hover:scale-105 transition-transform duration-200'>
+      <a href={elem.url} target="_blank" rel="noopener noreferrer">
+        <div className='overflow-hidden rounded-xl'>
           <img
             src={elem.download_url}
             alt={elem.author}
@@ -13,10 +12,10 @@ const card = (props) => {
             loading='lazy'
           />
         </div>
-        <h2 className='text-white py-2 text-xl font-semibold'>{elem .author}</h2>
+        <h2 className='text-white py-2 text-xl font-semibold'>{elem.author}</h2>
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default card
+export default Card;

@@ -13,16 +13,22 @@ const App = () => {
   }, [idx])
 
   const Photogallery = async () => {
-    const res = await fetch(`https://picsum.photos/v2/list?page=${idx}&limit=30`);
-    let data = await res.json();
-    setUserData(data)
-  }
+    try {
+      const res = await fetch(`https://picsum.photos/v2/list?page=${idx}&limit=30`);
+      if (!res.ok) throw new Error('Network response not ok');
+      const data = await res.json();
+      setUserData(data);
+    } catch (err) {
+      console.error('Fetch failed:', err);
+      setUserData([]);
+    }
+  };
   let printUserData = <div className='bg-black h-screen w-screen'>
     <h3 className='text-gray-300 text-xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold'>Loading...</h3></div>
   if (userData.length > 0) {
     printUserData = userData.map(function (elem, idx) {
 
-      return <div key={elem.idx}>
+      return <div key={elem.id}>
         <Card elem={elem} />
       </div>
     })
@@ -31,8 +37,8 @@ const App = () => {
     <div className="bg-black h-auto">
 
       <h1 className="text-white text-4xl font-bold text-center my-8">
-      📸 Photo Gallery
-    </h1>
+        📸 Photo Gallery
+      </h1>
 
       <div className='flex flex-wrap gap-7 py-6 px-5 justify-center'>
         {printUserData}
@@ -40,23 +46,23 @@ const App = () => {
 
       <div className='py-9 flex justify-center gap-20'>
         <button className='text-white px-4 py-2 text-[20px] border border-transparent font-medium bg-amber-600 rounded-lg hover:scale-105 transition-transform hover:bg-transparent hover:border hover:border-amber-600 hover:text-amber-600 duration-200 cursor-pointer'
-        onClick={()=>{
-          if(idx > 1){
-            setIndex(idx - 1);
-            setUserData([])
+          onClick={() => {
+            if (idx > 1) {
+              setIndex(idx - 1);
+              setUserData([])
 
-          }
-        }}>Prev</button>
+            }
+          }}>Prev</button>
 
         <h3 className='text-white text-4xl font-bold'>{idx}</h3>
 
         <button className='text-white px-4 py-2 text-[20px] border border-transparent font-medium bg-amber-600 rounded-lg hover:scale-105 transition-transform hover:bg-transparent hover:border hover:border-amber-600 hover:text-amber-600 duration-200 cursor-pointer'
-        onClick={()=>{
-          
+          onClick={() => {
+
             setIndex(idx + 1);
             setUserData([])
           }
-        }
+          }
         >Next</button>
       </div>
 
