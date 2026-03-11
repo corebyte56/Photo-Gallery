@@ -7,14 +7,14 @@ const App = () => {
 
   const Photogallery = async () => {
     try {
-      const res = await fetch(`https://api.pexels.com/v1/curated?per_page=30&page=${idx}`, {
+      const res = await fetch(`https://api.pexels.com/v1/curated?per_page=15&page=${idx}`, {
         headers: {
           Authorization: import.meta.env.VITE_PEXELS_API_KEY
         }
       });
       if (!res.ok) throw new Error('Network response not ok');
       const data = await res.json();
-      setUserData(data.photos); // ✅ এখানে data.photos map করতে হবে
+      setUserData(data.photos); 
     } catch (err) {
       console.error('Fetch failed:', err);
       setUserData([]);
@@ -45,14 +45,18 @@ const App = () => {
         📸 Photo Gallery
       </h1>
 
-      <div className='flex flex-wrap gap-7 py-6 px-5 justify-center'>
+      <div className='grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 grid-cols-2  gap-7 py-6 px-5 justify-center'>
         {printUserData}
       </div>
 
       <div className='py-9 flex justify-center gap-20'>
         <button
           className='text-white px-4 py-2 text-[20px] border border-transparent font-medium bg-amber-600 rounded-lg hover:scale-105 transition-transform hover:bg-transparent hover:border hover:border-amber-600 hover:text-amber-600 duration-200 cursor-pointer'
-          onClick={() => { if (idx > 1) setIndex(idx - 1) }}
+          onClick={() => { 
+            if (idx > 1) 
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setIndex(idx - 1) 
+            }}
         >
           Prev
         </button>
@@ -61,7 +65,11 @@ const App = () => {
 
         <button
           className='text-white px-4 py-2 text-[20px] border border-transparent font-medium bg-amber-600 rounded-lg hover:scale-105 transition-transform hover:bg-transparent hover:border hover:border-amber-600 hover:text-amber-600 duration-200 cursor-pointer'
-          onClick={() => setIndex(idx + 1)}
+          onClick = {() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setIndex(idx + 1)
+            
+          }}
         >
           Next
         </button>
