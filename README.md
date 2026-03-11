@@ -1,18 +1,83 @@
-# React + Vite
+# 📸 Gallery Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern animated gallery built using **React**, **Tailwind CSS**, and **GSAP**.
+This project displays images in a clean grid layout with smooth animations and responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+* **React** – For building the UI components
+* **Tailwind CSS** – For fast and responsive styling
+* **GSAP** – For smooth and powerful animations
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## ✨ Features
 
-## Expanding the ESLint configuration
+* Responsive image gallery layout
+* Smooth animations using GSAP
+* Clean and modern UI design
+* Fast performance with React components
+* Mobile friendly design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Project Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/corebyte56/Photo-Gallery.git
+```
+
+Go to the project folder:
+
+```bash
+cd gallery-project
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Folder Structure
+
+```
+src
+ ┣ components
+ ┣ assets
+ ┣ App.jsx
+ ┗ main.jsx
+```
+
+---
+
+## 🧠 What I Learned
+
+* Creating reusable components in React
+* Styling quickly using Tailwind CSS
+* Adding animations with GSAP
+* Structuring a React project
+
+---
+
+## 👨‍💻 Author
+
+**Sahariar Ahmed Fahim**
+Computer Science & Engineering Student
+Passionate about Web Development and Problem Solving.
+
+---
+
+⭐ If you like this project, give it a star on GitHub.
