@@ -50,12 +50,15 @@ const App = () => {
       </div>
 
       <div className='py-9 flex justify-center gap-20'>
-        <button
+        <button style={{opacity: idx === 1 ? 0.6 : 1} }
           className='text-white px-4 py-2 text-[20px] border border-transparent font-medium bg-amber-600 rounded-lg hover:scale-105 transition-transform hover:bg-transparent hover:border hover:border-amber-600 hover:text-amber-600 duration-200 cursor-pointer'
           onClick={() => { 
-            if (idx > 1) 
-              window.scrollTo({ top: 0, behavior: "smooth" });
+            if (idx > 1){
               setIndex(idx - 1) 
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            } 
+              
+              
             }}
         >
           Prev
